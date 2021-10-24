@@ -1,0 +1,14 @@
+{% extends 'common.html' %} {% load static %} {% block head %}
+<title>Home</title>
+{% endblock %} {% block content %}
+
+
+<div>
+<a class="btn btn-outline-warning" style="margin-left: 1309px;margin-top: 10px;" href="{% url 'AttendeeList' %}" role="button">Generate Attendee List</a>
+</div>
+<div class="butt" style="text-align: center; padding-top: 250px">
+  <a class="btn btn-outline-warning" href="{% url 'base' %}" role="button">Mark Attendance</a>
+  <a class="btn btn-outline-warning" href="{% url 'register' %}" role="button">Student Registration</a>
+</div>
+
+{% endblock %}

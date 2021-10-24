@@ -1,0 +1,182 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block head %}
+<title>Registration form</title>
+ <style>
+    #video {
+        border: 1px solid black;
+        width: 305px;
+        height: 230px;
+    }
+
+    #photo {
+        border: 1px solid black;
+        width: 320px;
+        height: 240px;
+    }
+
+    #canvas {
+        display: none;
+    }
+
+    .camera {
+        width: 340px;
+        display: inline-block;
+    }
+
+    .output {
+        width: 340px;
+        display: inline-block;
+    }
+
+    #startbutton {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 36px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #6a67ce;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        color: rgba(255, 255, 255, 1.0);
+        cursor: pointer;
+    }
+
+    .contentarea {
+        font-size: 16px;
+        font-family: Arial;
+        background-color: #323339;
+    }
+    
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/signin.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<main class="form-signin" style="margin-top: 0px;">
+    <a type="button" class="btn-close" style="margin-bottom: 0px;margin-left: 285px;" href="/" aria-label="Close"></a>
+  <form method="post" action="{% url 'register' %}" enctype="multipart/form-data"> 
+            {% csrf_token %}
+    <h1 class= "h3 mb-3 fw-normal" style="text-align: center;color: rgb(167, 80, 49);margin-top: auto;">Sign Up</h1>
+    <label for="inputEmail" class="visually-hidden">Username</label>
+    <input type="text" id="inputEmail" name="usernameup" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputPassword" class="visually-hidden">Password</label>
+    <input type="password" id="inputPassword" name="passwordup" class="form-control" placeholder="Password" required>
+    <label for="inputPassword" class="visually-hidden">RePassword</label>
+    <input type="password" id="inputPassword" name="repasswordup" class="form-control" placeholder="Re Enter Password"
+      required>
+    <label for="encodings" class="visually-hidden">Encodings</label>
+    <input type="text" accept="image/png" id="encodings" name="encodings" class="visually-hidden" placeholder="Encodings"
+      required>
+      <div class="contentarea">
+    
+        <div class="camera" style="margin-right: 25px;">
+            <video id="video">Video stream not available.</video>
+        </div>
+        <div style="text-align: center;margin-bottom: 2px;"><button role="button" id="startbutton">Take photo</button></div>
+         <canvas id="canvas"></canvas>
+    </div> 
+  
+    <button class=" btn btn-lg btn-primary" style="width:100%;" type="submit" >Sign Up</button>
+    
+  </form>
+</main>
+
+
+ 
+
+<script >(function() { 
+    var width = 320; // We will scale the photo width to this
+      var height = 0; // This will be computed based on the input stream
+    
+      var streaming = false;
+    
+      var video = null;
+      var canvas = null;
+      var photo = null;
+      var startbutton = null;
+    
+      function startup() {
+           
+          video = document.getElementById('video');
+          canvas = document.getElementById('canvas');
+          photo = document.getElementById('photo');
+          startbutton = document.getElementById('startbutton');
+        //   save = document.getElementById('save');
+    
+          navigator.mediaDevices.getUserMedia({
+                  video: true,
+                  audio: false
+              })
+              .then(function(stream) {
+                  video.srcObject = stream;
+                  video.play();
+                  
+              })
+              .catch(function(err) {
+                  console.log("An error occurred: " + err);
+              });
+    
+          video.addEventListener('canplay', function(ev) {
+              if (!streaming) {
+                  height = video.videoHeight / (video.videoWidth / width);
+                  if (isNaN(height)) {
+                      height = width / (4 / 3);
+                  }
+                  // setting video attributes
+                  video.setAttribute('width', width);
+                  video.setAttribute('height', height);
+                  canvas.setAttribute('width', width);
+                  canvas.setAttribute('height', height);
+                  streaming = true;
+                  // console.log("video")
+              }
+          }, false);
+    
+          startbutton.addEventListener('click', function(ev) {
+              takepicture();
+              ev.preventDefault();
+          }, false);
+    
+          clearphoto();
+    
+      }
+    
+    
+      function clearphoto() {
+          var context = canvas.getContext('2d');
+          context.fillStyle = "#AAA";
+          context.fillRect(0, 0, canvas.width, canvas.height);
+    
+          var data = canvas.toDataURL('image/png');
+          // console.log(data)
+        //   photo.setAttribute('src', data);
+          
+      }
+    
+      function takepicture() {
+        var context = canvas.getContext('2d');
+              if (width && height) {
+                  canvas.width = width;
+                  canvas.height = height;
+                  context.drawImage(video, 0, 0, width, height);
+
+                  var data = canvas.toDataURL('image/png');
+                //   photo.setAttribute('src', data);
+                  var inp = canvas.toDataURL("image/png").split(';base64,')[1];
+                  document.getElementById("encodings").setAttribute('value', inp);
+              } else {
+                  clearphoto();
+              }
+      }
+    
+      window.addEventListener('load', startup, false);
+    })();</script> 
+
+{% endblock %}
