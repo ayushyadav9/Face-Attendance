@@ -3,11 +3,11 @@
 {% endblock %} {% block content %}
 
 
-<div>
-<a class="btn btn-outline-warning" style="margin-left: 1309px;margin-top: 10px;" href="{% url 'AttendeeList' %}" role="button">Generate Attendee List</a>
+<div style="display:flex; justify-content: end;margin: 10px;" >
+<a class="btn btn-outline-warning"  href="{% url 'AttendeeList' %}" role="button">Generate Attendee List</a>
 </div>
-<div class="butt" style="text-align: center; padding-top: 250px">
-  <a class="btn btn-outline-warning" href="{% url 'base' %}" role="button">Mark Attendance</a>
+<div class="butt" style="display:flex; justify-content: center;text-align: center;">
+  <a class="btn btn-outline-warning mx-2" href="{% url 'base' %}" role="button">Mark Attendance</a>
   <a class="btn btn-outline-warning" href="{% url 'register' %}" role="button">Student Registration</a>
 </div>
 
