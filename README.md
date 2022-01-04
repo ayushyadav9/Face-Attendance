@@ -20,44 +20,46 @@ The promimnent features of this extension are:
 * A To-Do list to help you maximise your planning and efficiency.
 
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/soul0101/Prod-Max-Productivity-Management-Chrome-Extension/main/screens/timer.jpg" />
-</p>
-
 
 ### Built With
 
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
-* [JQuery](https://jquery.com)
-* [HTML]()
-* [CSS]()
+* [Django](https://www.djangoproject.com/)
+* [Python](https://www.python.org/)
+* [Face-Recognition](https://github.com/ageitgey/face_recognition)
+* [HTML & CSS]()
+* [JavaScript](https://www.javascript.com/)
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+This project uses the face-recognition library which is built upon dlib a C++ toolkit.<br>
+To avoid hassle free installation I would suggest you to use Anaconda and create a virtual environment.
+
+### Prerequisites
+Anaconda installed on your system if running locally.
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/soul0101/Prod-Max-Productivity-Management-Chrome-Extension/
+   git clone https://github.com/ayushyadav9/face-attendance.git
    ```
-2. Go to Chrome->Extensions->Turn on Developer Mode->Load Unpacked->Choose the Folder containing the cloned repository
-3. Pin the extension to the toolbar.
 
-
-
-<!-- USAGE EXAMPLES -->
-## Screenshots
-<table>
-  <tr>
-    <td>BlockList</td>
-     <td>Timer-Settings</td>
-     <td>To-Do Page</td>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/soul0101/Prod-Max-Productivity-Management-Chrome-Extension/raw/main/screens/blocklist.jpg" width=330></td>
-    <td><img src="https://github.com/soul0101/Prod-Max-Productivity-Management-Chrome-Extension/raw/main/screens/settings.jpg" width=330></td>
-    <td><img src="https://github.com/soul0101/Prod-Max-Productivity-Management-Chrome-Extension/raw/main/screens/todo.jpg" width=330></td>
-  </tr>
-</table>
-
+2. Create a Python Virtual Environment
+   ```sh
+   conda create -n yourenvname
+   ```
+3. Activate the Virtual Environment
+   ```sh
+   conda activate yourenvname
+   ```
+4. Install the packages in requirements.txt
+   ```sh
+   pip install -r requirements.txt
+   ```
+5. After migrations run the server
+   ```sh
+   python manage.py runserver
+   ```
 
 <!-- ROADMAP -->
 ## Roadmap
