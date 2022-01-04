@@ -1,27 +1,35 @@
 # Face-attendance System
 
+<br/>
+<br/>
+
 <p align="center">
   <a href="https://face-attendance935.herokuapp.com/">
     <img src="./images/main.png" alt="Logo" width="150">
   </a>
 </p>
 
-Demo : [Click here](https://face-attendance935.herokuapp.com/)
+<br/>
+<br/>
+
+**Demo** : [Click here](https://face-attendance935.herokuapp.com/)
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
------------------------------------
-A chrome extension that leverages and combines serveral basic functionalities to help you increase your productivity manifolds. 
-The promimnent features of this extension are:
-* A Timer with adjustable Focus-times, Break-Times and the number of Study Cycles.
-* A Blacklisting feature which enables you to Block the websites of your choice to help you avoid all kinds of distractions during your work.
-* A To-Do list to help you maximise your planning and efficiency.
+## **About The Project**
+This project aims to provide a valuable attendance service for both teachers and students. Reduce manual process errors by provide automated and a reliable attendance system uses face recognition technology.
+
+It involves building an attendance system which utilizes facial recognition to mark the presence of the students. It covers areas such as face detection, alignment, visibility, and web application that provides user interface to use this functionality.
 
 
 
-### Built With
+
+<br/>
+<br/>
+
+
+### **Tech Stack used**
 
 * [Django](https://www.djangoproject.com/)
 * [Python](https://www.python.org/)
@@ -29,15 +37,13 @@ The promimnent features of this extension are:
 * [HTML & CSS]()
 * [JavaScript](https://www.javascript.com/)
 
-<!-- GETTING STARTED -->
-## Getting Started
+<br/>
 
-This project uses the face-recognition library which is built upon dlib a C++ toolkit.<br>
-To avoid hassle free installation I would suggest you to use Anaconda and create a virtual environment.
 
-### Prerequisites
-Anaconda installed on your system if running locally.
-### Installation
+
+
+### **Installation**
+Anaconda must be installed on your system if running locally.
 
 1. Clone the repo
    ```sh
@@ -61,15 +67,30 @@ Anaconda installed on your system if running locally.
    python manage.py runserver
    ```
 
+<br/>
+
+## **Screenshots**
+<div align="center" ><br/>
+Start with Registering the student on portal<br/><hr width=600/>
+  <img src="./images/register.png" width=600 ><br/><br/>
+After registrartion student can mark the attendence<br/><hr width=600/>
+  <img src="./images/login.png" width=600 ><br/><br/>
+Generating the attendence sheet<br/><hr width=600/>
+  <img src="./images/list.png" width=600><br/>
+</div>
+<br/>
+
 <!-- ROADMAP -->
 ## Roadmap
-1) Add analytics to help users evaluate their Focus Sessions.
-2) Enable users to sync their data.
-3) Migrate to MV3.
+1) Adding functionality of registering students with admin face authentication
+2) Integrating advanced Deep learning model that only recognizes 3-D faces. Currently the model recognizes 2-D faces also.
+3) Generating an excel sheet of attendence list.
 
+
+<br/>
 
 <!-- CONTRIBUTING -->
-## Contributing
+### **Contributing**
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -78,18 +99,17 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+   
+<br/>
 
 <!-- CONTACT -->
-## Contact
+### **Contact**
+Ayush Yadav - ayushyadav935@gmail.com
 
-Chirag H - chirag.hegde01@gmail.com
-
-Project Link: [Prod-Max-Productivity-Management-Chrome-Extension/](https://github.com/soul0101/Prod-Max-Productivity-Management-Chrome-Extension/)
-
-
+<br/>
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+### **Acknowledgements**
 
-* [Font Awesome](https://fontawesome.com)
-* [Google-Fonts](https://fonts.google.com)
+* [Bootstrap](https://getbootstrap.com)
+* [Heroku](https://heroku.com)
