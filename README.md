@@ -1,18 +1,42 @@
-# Face-attendance System
+<h1 align="center">
+  Scalar Hack X 2021
+</h1>
 
 <br/>
 <br/>
 
 <p align="center">
-  <a href="https://face-attendance935.herokuapp.com/">
+  
+  <a ma href="https://face-attendance935.herokuapp.com/">
     <img src="./images/main.png" alt="Logo" width="150">
   </a>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  <a href="https://face-attendance935.herokuapp.com/">
+    <img src="https://avatars.githubusercontent.com/u/57796181?s=200&v=4" alt="Logo" width="150">
+  </a>
+  
+  <br/>
+  <div align="center">
+    <h3>Theme - Education</h2>
+    <h3> Project - Attendance through Facial Recognition System</h2>
+    <h3>Team Name - March #</h3><br/>
+    Team Members - Ayush Yadav, Sushil Adwe</b>
+  </div>
+ 
 </p>
 
 <br/>
 <br/>
 
-**Demo** : [Click here](https://face-attendance935.herokuapp.com/)
+**Demo** : [Click here](https://face-attendance935.herokuapp.com/)<br/>
+**PPT** : [Click here](https://docs.google.com/presentation/d/1ohDVjODKT071X2a1MdO18IM3xQzfvrrgfWj-DLpfOlk/edit?usp=sharing)
 
 
 
